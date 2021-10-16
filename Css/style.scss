@@ -20,6 +20,13 @@ body{
   -webkit-border-radius: ($r);
   -moz-border-radius: ($r);
   border-radius: ($r);
+}@mixin B-Sizing ($r){
+  -webkit-box-sizing: ($r);
+  -moz-box-sizing:($r);
+  box-sizing: ($r);
+}
+body{
+  @include B-Sizing(border-box)
 }
 //End Global Rules
 //Start Responsive
@@ -84,12 +91,11 @@ nav{
     overflow: hidden;
     width: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     height: 18px;
     &:hover span:nth-of-type(2){width: 100%}
-    &:hover {outline: 1px solid #000; background-color: $mainColor;padding: 2px}
+    &:hover {outline: 1px solid #000; background-color: $mainColor;}
     &:hover span {background-color: #FFF;}
   }
   ul{
@@ -116,12 +122,12 @@ nav{
       position:absolute;
       width:100%;
       top:100%;left:0;
-      text-align:center;
-      align-items:center;
-      flex-direction: column;
+      //text-align:center;
+      justify-content:center;
+      flex-wrap: wrap;
       margin: 0;
       background-color: rgba(50, 150, 210, 0.7);
-      padding: 30px 20px;
+      padding: 30px 0;
       z-index: 10;
       li{padding: 10px;width: 80%;margin: 10px;a{padding: 8px 44%} }
       &:before{
@@ -148,6 +154,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 766px){min-height: calc(100vh - 53.79px);}
   &:before{
     content: '';
     position: absolute;
