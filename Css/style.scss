@@ -1,0 +1,196 @@
+//Start Variables
+$mainColor:rgb(20, 183, 150) ;
+$sectionBg:rgba(34, 160, 250, 0.3);
+$mainTransition:.4s;
+//End Variables
+//Start Global Rules
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+.container{
+  padding: 0 15px;
+  margin: 0 auto;
+}
+@mixin BR ($r){
+  -webkit-border-radius: ($r);
+  -moz-border-radius: ($r);
+  border-radius: ($r);
+}
+//End Global Rules
+//Start Responsive
+/* Mobile Screen */
+@media (max-width:767px)
+{
+  .container{
+}}
+/*small screens*/
+@media (min-width:768px)
+{
+  .container
+  {
+    width:750px
+  }
+}
+/*medium screens*/
+@media (min-width:992px)
+{
+  .container
+  {
+    width:970px
+  }
+}
+/*large screens*/
+@media (min-width:1200px)
+{
+  .container
+  {
+    width:1170px
+  }
+}
+//End Responsive
+
+//Start Header
+header{
+  background-color: $sectionBg;
+  position: relative;
+.container{
+    box-shadow: rgba(34, 160, 195, 0.15) 0 0 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  @media (max-width: 766px){justify-content: space-around}
+.logo{flex-basis: 120px;img{max-width: 100%}}
+nav{
+  display: flex;
+  align-items: center;
+  .i{
+    transition-duration: $mainTransition;
+    span{
+    display: none;
+    font-size: 24px;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    margin: 2px;
+    transition-duration: $mainTransition;
+    &:nth-of-type(2){width: 50%}
+    @media (max-width: 766px){display: flex;}
+    }
+    overflow: hidden;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 18px;
+    &:hover span:nth-of-type(2){width: 100%}
+    &:hover {outline: 1px solid #000; background-color: $mainColor;padding: 2px}
+    &:hover span {background-color: #FFF;}
+  }
+  ul{
+    @media (max-width:766px){display: none}
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;padding: 10px;
+    li{
+      padding: 5px;
+      a{text-transform: capitalize;text-align: center;font-size: 18px;color: #000;
+        transition-duration: $mainTransition;text-decoration: none;padding: 8px 15px}
+      &:hover a{
+        background-color: $mainColor;color: #FFF;@include BR(10px);
+      }
+    }
+    li.active a{
+      background-color: $mainColor;
+      color: #FFF;@include BR(10px);
+    }
+    }
+  .i{
+    &:hover + ul{display: flex;
+      position:absolute;
+      width:100%;
+      top:100%;left:0;
+      text-align:center;
+      align-items:center;
+      flex-direction: column;
+      margin: 0;
+      background-color: rgba(50, 150, 210, 0.7);
+      padding: 30px 20px;
+      z-index: 10;
+      li{padding: 10px;width: 80%;margin: 10px;a{padding: 8px 44%} }
+      &:before{
+      content: '';
+      position: absolute;
+      top:-6%;
+      right: 26%;
+      border: 10px solid transparent;
+      background-color: transparent;
+      border-bottom: 10px solid rgba(50, 150, 210, 0.7);
+      }}
+    }
+  }
+}
+}
+
+//End Header
+//Start Landing
+.landing{
+  background-image: url("../Photos/workhard.jpg");
+  background-size: cover;
+  min-height: calc(100vh - 82px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(315deg, rgba(99, 164, 255, 0.8) 0%,
+            rgba(0, 0, 0, 0.2) 60%,
+            rgba(131, 234, 241, 0.5) 74%);}
+  .parent{
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(calc(100%/6) , 1fr));
+    justify-items: start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    padding: 0 30px;
+    @media (max-width: 766px){justify-items: center;
+      grid-template-columns: repeat(auto-fill ,minmax(300px , 1fr));
+    }
+    .photo{
+      width: 200px;
+      height: 200px;
+      @include BR(50%);
+      display: flex;
+      align-items: center;
+      border: 4px solid #FFF;
+      transition-duration: $mainTransition;
+      background-image: url("../Photos/Me Bd8.jpg");
+      background-size: cover;
+      &:hover{border-color: $mainColor}
+    }
+    .text{
+    @media (max-width: 766px){text-align: center ; grid-column: auto}
+      grid-column: 4/6;
+      color:#FFF;
+      h1{text-shadow: 2px -2px 4px $mainColor;font-size: 2.5em;
+        transition-duration: $mainTransition;
+      &:hover{text-shadow: 2px -2px 4px #FFF; Color: $mainColor} }
+      p{
+        line-height: 1.7;
+      }
+    }
+  }
+}
+//End Landing
