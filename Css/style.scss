@@ -2,6 +2,9 @@
 $mainColor:rgb(20, 183, 150) ;
 $sectionBg:rgba(34, 160, 250, 0.3);
 $mainTransition:.4s;
+$sectionSeparatorBackGround1:rgba(100, 180, 250, 0.4);
+$sectionSeparatorBackGround2:rgba(100, 180, 250, 0.1);
+$progressColor:#EEE;
 //End Variables
 //Start Global Rules
 html{
@@ -30,31 +33,58 @@ body{
 body{
   @include B-Sizing(border-box)
 }
-.container{.heading{
-  font-size: 20px;
-  padding: 60px 0;
+.container{
+  .heading{
+  font-size: 22px;
+  padding: 80px 0;
   display: flex;
   h1{margin:0 auto}
-}}
-//separator
-.spikes {
-  position: relative;
-  background: rgba(100, 180, 250, 0.15);
-  height: 20vh;
+  }
 }
-
-.spikes::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  left: -0%;
-  top: 100%;
-  z-index: 10;
-  display: block;
-  height: 70px;
-  background-size: 70px 100%;
-  background-image: linear-gradient(135deg, rgba(100, 180, 250, 0.15) 25%, transparent 25%), linear-gradient(225deg, rgba(100, 180, 250, 0.15), transparent 25%);
-  background-position: 0 0;
+//separator
+//.spikes {
+//  position: relative;
+//  background: rgba(100, 180, 250, 0.15);
+//  height: 20vh;
+//  &::after {
+//  content: '';
+//  position: absolute;
+//  right: 0;
+//  left: -0%;
+//  top: 100%;
+//  z-index: 10;
+//  display: block;
+//  height: 70px;
+//  background-size: 70px 100%;
+//  background-image: linear-gradient(135deg, rgba(100, 180, 250, 0.25) 25%, transparent 25%), linear-gradient(225deg, rgba(100, 180, 250, 0.25), transparent 25%);
+//  background-position: 0 0;
+//  }
+//}
+body {
+  .spikes {
+    position: relative;
+    background: #d8ecfe;
+    height: 20vh;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: -0%;
+      top: 100%;
+      z-index: 10;
+      display: block;
+      height: 50px;
+      background-size: 50px 100%;
+      background-image: linear-gradient(135deg, #d8ecfe 25%, transparent 25%), linear-gradient(225deg, #d8ecfe 25%, transparent 25%);
+      background-position: 0 0;
+    }
+  }
+  section.spikes:nth-of-type(2){
+    background: $sectionSeparatorBackGround1;
+    &::after {
+      background-image: linear-gradient(135deg, $sectionSeparatorBackGround1 25%, transparent 25%), linear-gradient(225deg, $sectionSeparatorBackGround1 25%, transparent 25%);
+    }
+  }
 }
 //End Global Rules
 //Start Responsive
@@ -90,6 +120,7 @@ body{
 //End Responsive
 
 //Start Header
+
 header{
   background-color: $sectionBg;
   position: relative;
@@ -98,7 +129,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-  @media (max-width: 766px){justify-content: space-around}
 .logo{flex-basis: 120px;img{max-width: 100%}}
 nav{
   display: flex;
@@ -114,7 +144,8 @@ nav{
     position: absolute;
     opacity: 0;
     font-size: 26px;
-    transition-duration: $mainTransition;transition-timing-function: linear
+    transition-duration: $mainTransition;transition-timing-function: ease-in-out;
+      transition-delay: .1s;
   }
   .i{
     transition-duration: $mainTransition;
@@ -177,7 +208,9 @@ nav{
 }
 
 //End Header
+
 //Start Landing
+
 .landing{
   background-image: url("../Photos/workhard.jpg");
   background-size: cover;
@@ -202,9 +235,10 @@ nav{
     width: 100%;
     position: relative;
     padding: 0 30px;
-    @media (max-width: 766px){justify-items: center;
+    @media (max-width: 991px){
+      justify-items: center;
       display: grid;
-      grid-template-columns: repeat(auto-fill ,minmax(300px , 1fr));
+      grid-template-columns: repeat(auto-fill ,minmax(450px , 1fr));
     }
     .photo{
       width: 250px;
@@ -217,9 +251,10 @@ nav{
       background-image: url("../Photos/Me Bd8.jpg");
       background-size: cover;
       &:hover{border-color: $mainColor}
+      @media (max-width:766px){width: 200px;height: 200px}
     }
     .text{
-    @media (max-width: 766px){text-align: center ; grid-column: auto}
+    @media (max-width: 991px){font-size: smaller ;text-align: center ; grid-column: auto}
       color:#FFF;
       h1{text-shadow: 2px -2px 4px $mainColor;font-size:50px;
         transition-duration: $mainTransition;
@@ -233,10 +268,13 @@ nav{
     }
   }
 }
+
 //End Landing
+
 //Start Projects
+
 .projects{
-  background-color: rgba(100, 180, 250, 0.15);
+  background-color: rgba(100, 180, 250, 0.25);
   .container{
     .grid-holder{
       display: grid;
@@ -312,6 +350,190 @@ nav{
     }
   }
 }
+
 // img width 1899px
 // img height 900p
+
 //End Projects
+
+//Skills
+
+.skills{
+  background-color: $sectionSeparatorBackGround1;
+  .container{
+    .skillsHolder{
+      padding: 0 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .skill{
+        margin:30px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Pushster', cursive;
+        @media (max-width: 991px){flex-direction: column}
+        i{
+          font-size: 80px;
+          position: relative;
+          &:after{font-family: 'Pushster', cursive;}
+        }
+        &:nth-child(1) > i{
+          color: orangered;
+          &:after{
+            content: 'HTML';
+            position: absolute;
+            font-size: 12px;
+            color: #000;
+            top: 100%;
+            left: 50%;
+            transform: translatex(-50%);
+          }
+        }
+        &:nth-child(2) > i{
+          color: #00F;
+          &:after{
+            content: 'CSS';
+            position: absolute;
+            font-size: 12px;
+            color: #000;
+            top: 100%;
+            left: 50%;
+            transform: translatex(-50%);
+          }
+        }
+        &:nth-child(3) > i{
+          color: hotpink;
+          &:after{
+            content: 'Sass';
+            position: absolute;
+            font-size: 12px;
+            color: #000;
+            top: 100%;
+            left: 50%;
+            transform: translatex(-50%);
+          }
+        }
+          > .img{
+          width: 80px;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            position: relative;
+            &:after{
+              content: 'Java Script';
+              position: absolute;
+              font-size: 12px;
+              color: #000;
+              top: 100%;
+              left: 50%;
+              transform: translatex(-50%);
+            }
+          img{
+            max-width: 100%;
+          }
+        }
+        .progress{
+          background:$progressColor;
+          height: 25px;
+          width: 500px;
+          @include BR(5px);
+           span{
+            background-color: $mainColor;
+             display: block;
+            position: relative;
+             height: 100%;
+             @include BR(5px);
+            &:after{
+              content: attr(data-progress);
+              position: absolute;
+              background-color: #000;
+              width: 40px;
+              text-align: center;
+              color: #FFF;
+              top: -25px;
+              left: 95%;
+              //@media (max-width: 766px) {left: 78%;}
+              @include BR(4px);
+            }
+             &:before{
+               content: '';
+               position: absolute;
+               right: -7px;
+               top: -8px;
+               border: 7px solid transparent;
+               border-top-color:#000 ;
+             }
+          }
+          @media (max-width: 991px){margin-top: 40px;width: 100%}
+        }
+        &:nth-child(4){
+          .img{
+            &:after{
+              width: 65px;
+            }
+          }
+          .progress{
+            span{
+              &:after{
+                left: -13px;
+              }
+            }
+          }
+        }
+        &:last-child{
+          .img{
+            &:after{
+              content: 'Python';
+              position: absolute;
+              font-size: 12px;
+              color: #000;
+              top: 100%;
+              left: 50%;
+              transform: translatex(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//End Skills
+
+//Contact
+
+.contact{
+  background-color:$sectionSeparatorBackGround2 ;
+  .container{
+    form{
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+      flex-direction: column;
+      justify-content: center;
+      input:not([type='submit']) , textarea{
+        margin-bottom: 10px;
+        padding: 0 20px;
+        border:1px solid #CCC;
+        color: #000;
+        @include BR(7px);
+        &:focus{
+          outline: none;
+          border: 2px solid $mainColor;
+        }
+        &::placeholder{
+          color:#CCC;
+        }
+      }
+      input{
+        height: 40px;
+      }
+      textarea{
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+//End Contact

@@ -15,6 +15,10 @@
         <link rel="shortcut icon" href="Photos/Logo_M.png">
         <!--Facebook-->
         <!--https://www.facebook.com/elharery79-->
+        <!--Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
     </head>
     <body>
     <header>
@@ -28,10 +32,10 @@
                 <i class="fas fa-times c"></i>
                 </div>
                     <ul class="uList">
-                    <li class="active"><a href="#">home</a></li>
+                    <li class="active"><a href="https://amr-elharery.github.io/Elharery-Page/">home</a></li>
                     <li><a href="#portfolio">portfolio</a></li>
-                    <li><a href="#">skills</a></li>
-                    <li><a href="#">contact</a></li>
+                    <li><a href="#skills">skills</a></li>
+                    <li><a href="#contact">contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -94,5 +98,62 @@
         </div>
     </div>
     <section class="spikes"></section>
+    <div class="skills" id="skills">
+        <div class="container">
+            <div class="heading"><h1>Skills</h1></div>
+            <div class="skillsHolder">
+                <div class="skill">
+                    <i class="fab fa-html5"></i>
+                    <div class="progress">
+                        <span style="width:100%" data-progress="100%"></span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-css3-alt"></i>
+                    <div class="progress">
+                        <span style="width:100%" data-progress="100%"></span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-sass"></i>
+                    <div class="progress">
+                        <span style="width:90%" data-progress="90%"></span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="img">
+                        <img src="Photos/js.png" alt="Js">
+                    </div>
+                    <div class="progress">
+                        <span style="width:1%" data-progress="1%"></span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="img">
+                        <img src="Photos/pythonLogo1.png" alt="Py logo">
+                    </div>
+<!--                    <i class="fab fa-python"></i>-->
+                    <div class="progress">
+                        <span style="width:30%" data-progress="30%"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <section class="spikes"></section>
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="heading"><h1>Contact</h1></div>
+            <form action="#" method="post">
+                <label for="name"></label>
+                <input type="text" id="name" placeholder="Name" required>
+                <label for="email"></label>
+                <input type="email" id="email" placeholder="Email">
+                <label for="message"></label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message..."></textarea>
+                <input type="submit" value="send">
+            </form>
+        </div>
+    </div>
     </body>
 </html>
