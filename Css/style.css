@@ -472,8 +472,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  margin-top: 5px; }
+  padding: 25px; }
   .footer .social {
     display: flex;
     justify-content: space-between;
