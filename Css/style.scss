@@ -4,7 +4,8 @@ $sectionBg:rgba(34, 160, 250, 0.3);
 $mainTransition:.4s;
 $sectionSeparatorBackGround1:rgba(100, 180, 250, 0.4);
 $sectionSeparatorBackGround2:rgba(100, 180, 250, 0.1);
-$progressColor:#EEE;
+$sectionSeparatorBackGround3:#2c3e50;
+$progressColor:rgba(250,250,250,.5);
 //End Variables
 //Start Global Rules
 html{
@@ -14,6 +15,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
 }
 .container{
   padding: 0 15px;
@@ -35,31 +37,14 @@ body{
 }
 .container{
   .heading{
-  font-size: 22px;
+  font-size: 24px;
   padding: 80px 0;
   display: flex;
   h1{margin:0 auto}
   }
 }
-//separator
-//.spikes {
-//  position: relative;
-//  background: rgba(100, 180, 250, 0.15);
-//  height: 20vh;
-//  &::after {
-//  content: '';
-//  position: absolute;
-//  right: 0;
-//  left: -0%;
-//  top: 100%;
-//  z-index: 10;
-//  display: block;
-//  height: 70px;
-//  background-size: 70px 100%;
-//  background-image: linear-gradient(135deg, rgba(100, 180, 250, 0.25) 25%, transparent 25%), linear-gradient(225deg, rgba(100, 180, 250, 0.25), transparent 25%);
-//  background-position: 0 0;
-//  }
-//}
+// -------------------------------separator
+
 body {
   .spikes {
     position: relative;
@@ -83,6 +68,12 @@ body {
     background: $sectionSeparatorBackGround1;
     &::after {
       background-image: linear-gradient(135deg, $sectionSeparatorBackGround1 25%, transparent 25%), linear-gradient(225deg, $sectionSeparatorBackGround1 25%, transparent 25%);
+    }
+  }
+  section.spikes:nth-of-type(3){
+    background-color: $sectionSeparatorBackGround3;
+    &::after {
+      background-image: linear-gradient(135deg, $sectionSeparatorBackGround3 25%, transparent 25%), linear-gradient(225deg, $sectionSeparatorBackGround3 25%, transparent 25%);
     }
   }
 }
@@ -281,14 +272,15 @@ nav{
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 20px;
     .box{
-      box-shadow: rgba(0, 0, 0, 0.3) 0 6px 7px -4px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 6px 7px 2px;
+      margin: 12px;
       display: flex;
       overflow: hidden;
       justify-content: center;
       position: relative;
-      border-bottom:6px solid #FFF ;
+      border-bottom:7px solid #FFF ;
         img{
-          max-width: 100%;
+          min-width: 100%;
           max-height: 100%;
           transition: .5s ease-in-out;
         }
@@ -351,8 +343,7 @@ nav{
   }
 }
 
-// img width 1899px
-// img height 900p
+
 
 //End Projects
 
@@ -366,13 +357,20 @@ nav{
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @media (max-width: 991px) {
+        padding: 0;
+      }
       .skill{
         margin:30px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-family: 'Pushster', cursive;
-        @media (max-width: 991px){flex-direction: column}
+        border: 3px outset #fff;
+        box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 30%);
+        padding: 20px;
+        @media (max-width: 991px){
+          flex-direction: column;}
         i{
           font-size: 80px;
           position: relative;
@@ -438,33 +436,29 @@ nav{
           background:$progressColor;
           height: 25px;
           width: 500px;
-          @include BR(5px);
+          @include BR(10px);
+          box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 20%);
            span{
             background-color: $mainColor;
              display: block;
             position: relative;
              height: 100%;
-             @include BR(5px);
+             @include BR(10px);
             &:after{
               content: attr(data-progress);
               position: absolute;
-              background-color: #000;
+              //background-color: #000;
               width: 40px;
               text-align: center;
-              color: #FFF;
-              top: -25px;
-              left: 95%;
-              //@media (max-width: 766px) {left: 78%;}
-              @include BR(4px);
+              //color: #FFF;
+              //top: -25px;
+              //left: 95%;
+              color: #000;
+              top: 50%;
+              transform: translateY(-50%);
+              left: calc(100% - 40px);
+              @include BR(5px);
             }
-             &:before{
-               content: '';
-               position: absolute;
-               right: -7px;
-               top: -8px;
-               border: 7px solid transparent;
-               border-top-color:#000 ;
-             }
           }
           @media (max-width: 991px){margin-top: 40px;width: 100%}
         }
@@ -533,7 +527,71 @@ nav{
       textarea{
         padding: 10px 20px;
       }
+      input[type='submit']{
+        width: fit-content;
+        border: none;
+        outline: none;
+        padding: 15px 20px;
+        background-color: $mainColor;
+        margin-top:5px;
+        margin-bottom: 15px;
+        color: #FFF;
+        @include BR(7px);
+      }
     }
   }
 }
+
 //End Contact
+
+//Footer
+
+.footer{
+  background-color: rgba(100,126,173,.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:15px;
+  margin-top:5px;
+  .social {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    perspective: 500px;
+    > a{
+      transition: $mainTransition linear;
+      &:hover{
+        transform: translate3d(0, -10px, 10px) rotate(45deg) ;
+      }
+    }
+    i {
+      font-size: 28px;
+      }
+    .fa-facebook{
+      color: #1877f2;
+    }
+    .fa-whatsapp{
+      color: green;
+    }
+    .fa-github{
+      color: #000;
+    }
+    .fa-twitter{
+      color: #19c8fa;
+    }
+  }
+  > a{
+    color: rgb(20, 183, 150);
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 20px;
+    transition: $mainTransition;
+    font-size: 20px;
+    &:hover{
+      color: #cf571e;
+    }
+  }
+}
+
+//End footer

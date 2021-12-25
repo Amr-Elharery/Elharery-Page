@@ -1,0 +1,35 @@
+/* My Footer -------------------------- */
+:root{
+    --mainColor:rgb(20, 183, 150) ;
+}
+footer.my-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent; /* This BG.C Is Up To Design*/
+    text-align: center;
+    padding:10px 20px;
+}
+footer.my-footer p {
+    color: #000;
+    font-weight: bold;
+    font-family: arial ,tahoma sans-serif
+}
+footer.my-footer p a {
+    text-decoration: none;
+    color: var(--mainColor) ; /* It Is Up To Design*/
+}
+footer.my-footer > i {
+    position: relative;
+    color: #5ac5f1;
+    font-size: 18px;
+    margin-left: 5px;
+}
+footer.my-footer > i i {
+    position: absolute;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 14px;
+}
