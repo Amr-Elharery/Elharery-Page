@@ -64,22 +64,34 @@ body .spikes::after {
 .main-heading::before{
   content: '';
   height: 2px;
-  width: 100px;
+  width:42%;
   position: absolute;
   left:-101px;
   top: 50%;
   transform: translateY(-50%);
   background-color: #444444;
 }
+@media (max-width: 767px){
+  .main-heading::before{
+    width: 40px;
+    left: -17%;
+  }
+}
 .main-heading::after{
   content: '';
   height: 2px;
-  width: 100px;
+  width: 42%;
   position: absolute;
   right: -101px;
   top: 50%;
   transform: translateY(-50%);
   background-color: #444444;
+}
+@media (max-width: 767px){
+  .main-heading::after{
+    width: 40px;
+    right: -17%;
+  }
 }
 /* Mobile Screen */
 /*small screens*/
