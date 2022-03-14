@@ -502,6 +502,7 @@ header .container nav .holder:hover + .uList li a {
 .contact .container form input {
   height: 40px; }
 .contact .container form textarea {
+  resize: none;
   padding: 10px 20px; }
 .contact .container form input[type='submit'] {
   width: fit-content;
@@ -517,39 +518,68 @@ header .container nav .holder:hover + .uList li a {
   border-radius: 7px; }
 
 .footer {
-  background-color: rgba(100, 180, 250, 0.4);;
+  /*background-color: rgba(100, 180, 250, 0.4);*/
   display: flex;
+  background-color:#000000e0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 25px; }
+  padding: 10px; }
+.footer span{
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  color: #FFF;
+  /*margin-bottom: 5px;*/
+
+}
+.footer .holder{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+@media (max-width: 767px){
+  .footer .holder{
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .footer .social {
   display: flex;
   justify-content: space-between;
-  width: 50%;
-  perspective: 500px; }
+}
 .footer .social > a {
-  transition: 0.4s linear; }
+  transition: 0.4s linear;
+  margin-left: 20px;
+  border-radius: 6px;
+  background-color: #2d2d2d;
+  padding: 5px;
+
+}
 .footer .social > a:hover {
-  transform: translate3d(0, -10px, 10px) rotate(45deg); }
+  transform: translateY(-10px); }
 .footer .social i {
   font-size: 28px; }
 .footer .social .fa-facebook {
-  color: #1877f2; }
+  color: #3b5998; }
 .footer .social .fa-whatsapp {
-  color: green; }
+  color:#43d854; }
 .footer .social .fa-github {
-  color: #000; }
+  color: #00405d; }
 .footer .social .fa-twitter {
-  color: #19c8fa; }
-.footer > a {
-  color: #14b796;
-  text-decoration: none;
-  padding: 5px;
-  margin-top: 20px;
-  transition: 0.4s;
-  font-size: 20px; }
-.footer > a:hover {
-  color: #cf571e; }
+  color: #55acee; }
+.footer .social .fa-phone{
+  color: #fff;
+}
+/*.footer > a {*/
+/*  color: #fff;*/
+/*  text-decoration: none;*/
+/*  padding: 5px;*/
+/*  margin-top: 20px;*/
+/*  transition: 0.4s;*/
+/*  font-size: 20px; }*/
+/*  .footer > a:hover {*/
+/*    color: #cf571e; }*/
 
 /*# sourceMappingURL=style.css.map */
