@@ -4,11 +4,13 @@
 }
 footer.my-footer{
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
     background: transparent; /* This BG.C Is Up To Design*/
     text-align: center;
-    padding:10px 20px;
+    /*padding:10px 20px;*/
+    border-top: 1px solid #fff;
 }
 footer.my-footer p {
     color: #FFF;
