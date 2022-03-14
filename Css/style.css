@@ -538,6 +538,7 @@ header .container nav .holder:hover + .uList li a {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  margin-bottom: 10px;
 }
 @media (max-width: 767px){
   .footer .holder{
