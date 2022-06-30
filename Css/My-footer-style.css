@@ -4,16 +4,14 @@
 }
 footer.my-footer{
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: center;
     background: transparent; /* This BG.C Is Up To Design*/
     text-align: center;
-    /*padding:10px 20px;*/
-    border-top: 1px solid #fff;
+    padding:10px 20px;
 }
 footer.my-footer p {
-    color: #FFF;
+    color: #000;
     font-weight: bold;
     font-family: arial ,tahoma sans-serif
 }
