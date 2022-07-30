@@ -487,8 +487,8 @@ header {
             width: 100%; } }
       .skills .container .skillsHolder .skill:nth-child(4) .img:after {
         width: 65px; }
-      .skills .container .skillsHolder .skill:nth-child(4) .progress span:after {
-        left: -13px; }
+      /* .skills .container .skillsHolder .skill:nth-child(4) .progress span:after {
+        left: -13px; } */
       .skills .container .skillsHolder .skill:last-child .img:after {
         content: 'Python';
         position: absolute;
