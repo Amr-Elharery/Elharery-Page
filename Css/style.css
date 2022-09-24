@@ -139,7 +139,10 @@ header {
         }
         @media (max-width: 765px) {
           header .container nav .holder span{
-            display: flex; }
+            display: flex;
+            cursor: pointer;
+
+          }
           header .container nav .holder{
             width: 20px;
             height: 14px;
@@ -192,7 +195,7 @@ header {
             z-index: -1;
             transform: translateY(15px);
           }
-             }
+            }
         @media (min-width: 767px) {
           header .container nav ul {
             display: flex;
@@ -222,7 +225,7 @@ header {
           -moz-border-radius: 10px;
           border-radius: 10px; }
       header .container nav .holder:hover > .uList {
-       opacity: 1;
+      opacity: 1;
         transform: translateY(0);
         z-index: 100;
       }
@@ -374,6 +377,39 @@ header {
       .projects .container .grid-holder .box:hover .title {
         bottom: 0;
         transition-duration: .6s; }
+        .in-progress-box{
+          position: relative;
+        }
+        .in-progress-box .box::after{
+          content: '';
+          background-color: #000;
+          opacity: 0.7;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+        .in-progress-box .in-progress{
+          text-align: center;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+          border-radius: 10px;
+          background-color: #eee;
+          padding: 5px 10px;
+          top: 50%;
+        }
+        .in-progress-box .in-progress i{
+              color: gray;
+              animation-name: rotate;
+              animation-timing-function: linear;
+              animation-duration: 1.5s;
+              animation-iteration-count: infinite;
+              animation-fill-mode: backwards;
+        }
+        .in-progress-box .in-progress i:hover{
+          animation-play-state: paused;
+        }
 
 .skills {
   padding: 80px 0;
@@ -487,8 +523,8 @@ header {
             width: 100%; } }
       .skills .container .skillsHolder .skill:nth-child(4) .img:after {
         width: 65px; }
-      /* .skills .container .skillsHolder .skill:nth-child(4) .progress span:after {
-        left: -13px; } */
+      .skills .container .skillsHolder .skill:nth-child(4) .progress span:after {
+        left: -13px; }
       .skills .container .skillsHolder .skill:last-child .img:after {
         content: 'Python';
         position: absolute;
@@ -602,5 +638,11 @@ header {
   /*  font-size: 20px; }*/
   /*  .footer > a:hover {*/
   /*    color: #cf571e; }*/
+/* Key Frames */
+@keyframes rotate{
+  to{
+  transform:rotate(360deg)
+  }
+}
 
-/*# sourceMappingURL=style.css.map */
+  /*# sourceMappingURL=style.css.map */
