@@ -8,7 +8,7 @@ window.addEventListener("scroll", () => {
 
 
 
-// -------Functions
+// --------Functions
 function thank() {
   alert("Thanks for sending me");
 }
