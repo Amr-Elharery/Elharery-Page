@@ -562,7 +562,24 @@ header {
         color: #000;
         top: 100%;
         left: 50%;
-        transform: translatex(-50%); }
+        transform: translatex(-50%);
+        -webkit-transform: translatex(-50%);
+        -moz-transform: translatex(-50%);
+        -ms-transform: translatex(-50%);
+        -o-transform: translatex(-50%);
+}
+.skills .container .skillsHolder .skill:nth-child(5) > i{
+  color: #149eca;
+}
+        .skills .container .skillsHolder .skill:nth-child(5) > i::after{
+          content: "React.js";
+          position: absolute;
+          color: #000;
+          font-size: 14px;
+          top: 110%;
+          left: 50%;
+          transform: translatex(-50%);
+        }
 
 .contact {
   padding: 80px 0;
